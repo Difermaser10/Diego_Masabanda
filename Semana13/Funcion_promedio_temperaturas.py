@@ -1,12 +1,34 @@
-# Crear una matriz 3D para almacenar datos de temperaturas
-# Primera dimensión: Ciudades (Quito, Guayaquil y Cuenca)
-# Segunda dimensión: Semanas (5 semanas)
-# Tercera dimensión: Días de la semana (7 días)
+#Calcula la temperatura promedio de 3 ciudades, Quito, Guayaquil y Cuenca
 
-ciudades = ["Quito", "Guayaquil", "Cuenca"]
+#Definimos la función
+
+def calcular_promedio_temperaturas(temperaturas):
+    """
+    Calcula el promedio de temperatura por semana para cada ciudad.
+
+    Parámetros:
+    temperaturas (dict): Un diccionario con ciudades como claves y listas de semanas con temperaturas como valores.
+
+    Retorna:
+    dict: Un diccionario con los promedios de temperatura por ciudad y semana.
+    """
+    promedios_por_ciudad = {}
+
+    for ciudad, semanas in temperaturas.items():
+        promedios_por_ciudad[ciudad] = []  # Lista para almacenar los promedios de cada semana
+
+        for i, semana in enumerate(semanas):
+            suma_temperaturas = sum(dia['temp'] for dia in semana)
+            promedio_semana = suma_temperaturas / len(semana)
+            promedios_por_ciudad[ciudad].append(round(promedio_semana, 2))
+
+    return promedios_por_ciudad
+
+
+# Datos de ejemplo para Quito, Guayaquil y Cuenca con 4 semanas
 temperaturas = {
     "Quito": [
-        [   # Semana 1
+        [  # Semana 1
             {"dia": "Lunes", "temp": 14},
             {"dia": "Martes", "temp": 16},
             {"dia": "Miércoles", "temp": 15},
@@ -15,7 +37,7 @@ temperaturas = {
             {"dia": "Sábado", "temp": 19},
             {"dia": "Domingo", "temp": 20}
         ],
-        [   # Semana 2
+        [  # Semana 2
             {"dia": "Lunes", "temp": 13},
             {"dia": "Martes", "temp": 15},
             {"dia": "Miércoles", "temp": 16},
@@ -24,7 +46,7 @@ temperaturas = {
             {"dia": "Sábado", "temp": 20},
             {"dia": "Domingo", "temp": 21}
         ],
-        [   # Semana 3
+        [  # Semana 3
             {"dia": "Lunes", "temp": 12},
             {"dia": "Martes", "temp": 14},
             {"dia": "Miércoles", "temp": 15},
@@ -33,7 +55,7 @@ temperaturas = {
             {"dia": "Sábado", "temp": 19},
             {"dia": "Domingo", "temp": 22}
         ],
-        [   # Semana 4
+        [  # Semana 4
             {"dia": "Lunes", "temp": 15},
             {"dia": "Martes", "temp": 17},
             {"dia": "Miércoles", "temp": 18},
@@ -41,15 +63,6 @@ temperaturas = {
             {"dia": "Viernes", "temp": 20},
             {"dia": "Sábado", "temp": 21},
             {"dia": "Domingo", "temp": 23}
-        ],
-        [   # Semana 5
-            {"dia": "Lunes", "temp": 16},
-            {"dia": "Martes", "temp": 18},
-            {"dia": "Miércoles", "temp": 19},
-            {"dia": "Jueves", "temp": 20},
-            {"dia": "Viernes", "temp": 21},
-            {"dia": "Sábado", "temp": 22},
-            {"dia": "Domingo", "temp": 24}
         ]
     ],
     "Guayaquil": [
@@ -88,15 +101,6 @@ temperaturas = {
             {"dia": "Viernes", "temp": 25},
             {"dia": "Sábado", "temp": 26},
             {"dia": "Domingo", "temp": 27}
-        ],
-        [  # Semana 5
-            {"dia": "Lunes", "temp": 22},
-            {"dia": "Martes", "temp": 23},
-            {"dia": "Miércoles", "temp": 24},
-            {"dia": "Jueves", "temp": 25},
-            {"dia": "Viernes", "temp": 26},
-            {"dia": "Sábado", "temp": 27},
-            {"dia": "Domingo", "temp": 28}
         ]
     ],
     "Cuenca": [
@@ -135,23 +139,13 @@ temperaturas = {
             {"dia": "Viernes", "temp": 11},
             {"dia": "Sábado", "temp": 13},
             {"dia": "Domingo", "temp": 10}
-        ],
-        [  # Semana 5
-            {"dia": "Lunes", "temp": 12},
-            {"dia": "Martes", "temp": 13},
-            {"dia": "Miércoles", "temp": 15},
-            {"dia": "Jueves", "temp": 18},
-            {"dia": "Viernes", "temp": 19},
-            {"dia": "Sábado", "temp": 19},
-            {"dia": "Domingo", "temp": 12}
         ]
     ]
 }
 
-# Calcular el promedio de temperaturas por ciudad y semana
-for ciudad, semanas in temperaturas.items():
+# Llamar a la función y mostrar los resultados
+resultados = calcular_promedio_temperaturas(temperaturas)
+for ciudad, promedios in resultados.items():
     print(f"\nCiudad: {ciudad}")
-    for i, semana in enumerate(semanas):
-        suma = sum(dia['temp'] for dia in semana)
-        promedio = suma / len(semana)
-        print(f"Semana {i + 1}: Promedio de temperatura = {promedio:.2f}°C")
+    for i, promedio in enumerate(promedios):
+        print(f"Semana {i + 1}: Promedio de temperatura = {promedio}°C")
