@@ -1,21 +1,15 @@
 #Calcula la temperatura promedio de 3 ciudades, Quito, Guayaquil y Cuenca
+#Utilizaremos los datos de las 4 semanas del código de la semana anterior
 
 #Definimos la función
 
 def calcular_promedio_temperaturas(temperaturas):
-    """
-    Calcula el promedio de temperatura por semana para cada ciudad.
 
-    Parámetros:
-    temperaturas (dict): Un diccionario con ciudades como claves y listas de semanas con temperaturas como valores.
-
-    Retorna:
-    dict: Un diccionario con los promedios de temperatura por ciudad y semana.
-    """
     promedios_por_ciudad = {}
 
     for ciudad, semanas in temperaturas.items():
         promedios_por_ciudad[ciudad] = []  # Lista para almacenar los promedios de cada semana
+        #Sumamos los datos de la semana, calcula el promedio y redondea a 2 decimales
 
         for i, semana in enumerate(semanas):
             suma_temperaturas = sum(dia['temp'] for dia in semana)
@@ -25,7 +19,7 @@ def calcular_promedio_temperaturas(temperaturas):
     return promedios_por_ciudad
 
 
-# Datos de ejemplo para Quito, Guayaquil y Cuenca con 4 semanas
+# Datos del código de la semana anterior para Quito, Guayaquil y Cuenca con 4 semanas
 temperaturas = {
     "Quito": [
         [  # Semana 1
@@ -143,9 +137,9 @@ temperaturas = {
     ]
 }
 
-# Llamar a la función y mostrar los resultados
+# Llamamos a la función y mostramos los resultados
 resultados = calcular_promedio_temperaturas(temperaturas)
 for ciudad, promedios in resultados.items():
     print(f"\nCiudad: {ciudad}")
     for i, promedio in enumerate(promedios):
-        print(f"Semana {i + 1}: Promedio de temperatura = {promedio}°C")
+        print(f"Semana {i + 1}: Promedio de temperatura = {promedio}°C") #imprime los promedios de cada semana
