@@ -12,13 +12,13 @@ def calcular_descuento(monto_total, porcentaje_descuento=15):
 # 1. Monto de compra de $2500 con descuento por defecto de 15%
 monto1 = 2540
 descuento1 = calcular_descuento(monto1)
-monto_final1 = monto1 - descuento1
+valor_a_pagar1 = monto1 - descuento1
 
 # 2. Monto de compra de $700 con descuento del 20%
 monto2 = 980
 descuento2 = calcular_descuento(monto2, 20)
-monto_final2 = monto2 - descuento2
+valor_a_pagar2 = monto2 - descuento2
 
 # Mostrar los resultados finales
-print(f"Compra de ${monto1}: Descuento de ${descuento1}, Total a pagar: ${monto_final1}")
-print(f"Compra de ${monto2}: Descuento de ${descuento2}, Total a pagar: ${monto_final2}")
+print(f"Con tu compra de ${monto1} recibes un descuento de ${descuento1}. Total a pagar: ${valor_a_pagar1}")
+print(f"Con tu compra de ${monto2} recibes un descuento de ${descuento2}. Total a pagar: ${valor_a_pagar2}")
