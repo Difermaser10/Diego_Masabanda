@@ -19,6 +19,6 @@ monto2 = 980
 descuento2 = calcular_descuento(monto2, 20)
 monto_final2 = monto2 - descuento2
 
-# Mostrar resultados
+# Mostrar los resultados finales
 print(f"Compra de ${monto1}: Descuento de ${descuento1}, Total a pagar: ${monto_final1}")
 print(f"Compra de ${monto2}: Descuento de ${descuento2}, Total a pagar: ${monto_final2}")
