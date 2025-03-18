@@ -20,5 +20,5 @@ descuento2 = calcular_descuento(monto2, 20)
 valor_a_pagar2 = monto2 - descuento2
 
 # Mostrar los resultados finales
-print(f"Con tu compra de ${monto1} recibes un descuento de ${descuento1}. Total a pagar: ${valor_a_pagar1}")
-print(f"Con tu compra de ${monto2} recibes un descuento de ${descuento2}. Total a pagar: ${valor_a_pagar2}")
+print(f"Con tu compra de $2540 recibes un descuento de ${descuento1}. Total a pagar: ${valor_a_pagar1}")
+print(f"Con tu compra de $980 recibes un descuento de ${descuento2}. Total a pagar: ${valor_a_pagar2}")
