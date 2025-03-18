@@ -9,12 +9,12 @@ def calcular_descuento(monto_total, porcentaje_descuento=15):
 
 # Llamadas a la función
 
-# 1. Monto de compra de $2500 con descuento por defecto de 15%
+# 1. Monto de compra de $2540 con descuento por defecto de 15%
 monto1 = 2540
 descuento1 = calcular_descuento(monto1)
 valor_a_pagar1 = monto1 - descuento1
 
-# 2. Monto de compra de $700 con descuento del 20%
+# 2. Monto de compra de $980 con descuento del 20%
 monto2 = 980
 descuento2 = calcular_descuento(monto2, 20)
 valor_a_pagar2 = monto2 - descuento2
