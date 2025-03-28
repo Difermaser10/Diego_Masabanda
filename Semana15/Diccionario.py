@@ -1,23 +1,29 @@
-# Crear el diccionario con información personal
+# 1. Crear un diccionario
+# Crear el diccionario con información personal, permitiendo ingreso manual de los datos
 informacion_personal = {
-    "nombre": "Diego Masabanda",
-    "edad": 42,
-    "ciudad": "Quito",
-    "profesion": "Editor"
+    "nombre": input("Ingrese su nombre: "),
+    "edad": int(input("Ingrese su edad: ")),  # Aquí convertimos el dato a un entero, por eso difiere del resto
+    "ciudad": input("Ingrese su ciudad: "),
+    "profesion": input("Ingrese su profesión: ")
 }
 
-# Acceder y modificar la ciudad
-informacion_personal["ciudad"] = "Guayaquil"  # Cambiar la ciudad
+#2. Acceder y modificar valores
+# Accedemos al dato de ciudad y lo modificamos
+informacion_personal["ciudad"] = input("Ingrese una ciudad donde quisiera vivir o solo modifique la ciudad: ")  # Permite cambiar la ciudad manualmente
 
-# Agregar una nueva clave-valor para la profesion (ya existe, pero lo aseguramos)
-informacion_personal["profesion"] = "Editor de textos educativos"
+# Accedemos al dato de profesión y lo modificamos
+informacion_personal["profesion"] = input("Revise si su profesión es correcta o modifique la que está: ")
 
-# Verificar si la clave "telefono" existe y agregarla si no está
+# 3.Verificar existencias de clave
+# Verificamos si la clave telefono existe y la agregamos si no está
 if "telefono" not in informacion_personal:
-    informacion_personal["telefono"] = "0986437637"
+    informacion_personal["telefono"] = input("Ingrese su número de teléfono: ")
 
-# Eliminar la clave "edad" del diccionario
+# 4. Eliminammos una clave
+# Eliminar la clave edad del diccionario ya que no es necesaria
 del informacion_personal["edad"]
 
-# Imprimir el diccionario final
-print(informacion_personal)
+# 5. Imprimir el diccionario resultante después de realizar todas las operaciones
+print("\nInformación personal")
+for clave, valor in informacion_personal.items():
+    print(f"{clave.capitalize()}: {valor}")
