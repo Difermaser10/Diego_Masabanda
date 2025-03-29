@@ -17,7 +17,10 @@ informacion_personal["profesion"] = input("Revise si su profesión es correcta o
 # 3.Verificar existencias de clave
 # Verificamos si la clave telefono existe y la agregamos si no está
 if "telefono" not in informacion_personal:
+    print("No se encontró un número de teléfono en la información. Ingréselo a continuación.")
     informacion_personal["telefono"] = input("Ingrese su número de teléfono: ")
+else:
+    print("Ya existe un número de teléfono en la información.")
 
 # 4. Eliminammos una clave
 # Eliminar la clave edad del diccionario ya que no es necesaria
